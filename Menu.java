@@ -1,4 +1,12 @@
 /*
+ *
+ * A lot of this has been generated
+ * using the NetBeans GUI tool and
+ * still needs to be cleaned up.
+ */
+ 
+
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.

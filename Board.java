@@ -141,7 +141,7 @@ public class Board {
      * from the puzzle.
      */
     private int[][] remove(int num, int[][] puzzle){
-        ArrayList temp = new ArrayList();
+        ArrayList<Integer> temp = new ArrayList<Integer>();
         for(int i = 0; i<81; i++){
             temp.add(i);
         }

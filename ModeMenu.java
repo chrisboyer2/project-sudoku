@@ -17,7 +17,7 @@ public class ModeMenu {
 		JButton normalButton = new JButton("Normal");
 		normalButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				DifficultyMenu diff = new DifficultyMenu();
+				DifficultyMenu diff = new DifficultyMenu(false);
 				Sudoku.frame.getContentPane().removeAll();
 				Sudoku.frame.getContentPane().repaint();
 				Sudoku.frame.getContentPane().add(diff.p, BorderLayout.CENTER);
@@ -40,6 +40,14 @@ public class ModeMenu {
 		p.add(marathonButton);
 		
 		JButton timeAttackButton = new JButton("Time Attack");
+		timeAttackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DifficultyMenu diff = new DifficultyMenu(true);
+				Sudoku.frame.getContentPane().removeAll();
+				Sudoku.frame.getContentPane().repaint();
+				Sudoku.frame.getContentPane().add(diff.p, BorderLayout.CENTER);
+			}
+		});
 		timeAttackButton.setBounds(288, 295, 169, 23);
 		p.add(timeAttackButton);
 		

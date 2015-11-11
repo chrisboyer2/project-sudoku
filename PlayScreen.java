@@ -5,15 +5,17 @@ import javax.swing.JTextField;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
 import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JLabel;
 
 public class PlayScreen {
+	ActionListener normalPlay;
+	ActionListener checker;
 	Board board;
-	ArrayList tracker = new ArrayList();
+	ArrayList<Integer> tracker = new ArrayList<Integer>();
 	JTextField[] fields = new JTextField[81];
 	JPanel p = new JPanel();
 	public JButton btnPlayAgain;
@@ -513,7 +515,7 @@ public class PlayScreen {
 		p.add(textField_70);
 		
 		btnCheckAnswer = new JButton("Check Answer");
-		btnCheckAnswer.addActionListener(new ActionListener() {
+		btnCheckAnswer.addActionListener(checker = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 		        for(int i = 0; i<tracker.size(); i++){
 		            board.puzzle[(int) tracker.get(i)/9][(int) tracker.get(i)%9] = Integer.parseInt(fields[(int) tracker.get(i)].getText());
@@ -545,7 +547,7 @@ public class PlayScreen {
 		p.add(btnMainMenu);
 		
 		btnPlayAgain = new JButton("Play Again");
-		btnPlayAgain.addActionListener(new ActionListener() {
+		btnPlayAgain.addActionListener(normalPlay = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PlayScreen play = new PlayScreen();
 				Sudoku.frame.getContentPane().removeAll();
